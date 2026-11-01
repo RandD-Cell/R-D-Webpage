@@ -1,0 +1,101 @@
+:root{--red:#e8141b;--navy:#0c1f45;--blue:#2b3a8f;--ink:#222;--muted:#555;--bg:#f5f7fa;--green:#1f9d55}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Roboto",Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+
+/* top bar */
+.topbar{background:var(--red);color:#fff;display:flex;align-items:center;gap:28px;padding:12px 24px;font-size:15px;font-weight:500;overflow:hidden}
+.ticker{flex:1;overflow:hidden;white-space:nowrap}
+.ticker span{display:inline-block;padding-left:100%;animation:tick 30s linear infinite;font-weight:700}
+@keyframes tick{to{transform:translateX(-100%)}}
+.pay{color:#ffe14d;font-weight:700;white-space:nowrap}
+
+/* header */
+header{background:#fff;display:flex;align-items:center;gap:20px;padding:14px 24px;position:relative;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px}
+.logo .seal{width:56px;height:56px;border-radius:50%;border:3px solid #c9a24a;background:#e9eef9;display:grid;place-items:center;font-size:11px;font-weight:700;color:var(--blue);text-align:center;line-height:1.1}
+.logo b{display:block;font-size:22px;line-height:1;color:var(--blue);letter-spacing:.3px}
+.logo small{display:block;font-size:9px;color:#b8892e;font-weight:700;margin-top:3px}
+nav ul{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:13.5px;font-weight:700;text-transform:uppercase}
+nav a{padding:6px 0;display:inline-block}
+nav a.active{color:var(--red)}
+nav a:hover{color:var(--red)}
+.home{color:var(--red)}
+.menu-btn{display:none;margin-left:auto;background:none;border:1px solid #ccc;padding:6px 10px;font-size:20px;border-radius:4px}
+
+/* mega dropdown */
+.has-mega{position:static}
+.mega{display:none;position:absolute;left:5%;right:5%;top:100%;background:#fff;box-shadow:0 12px 30px rgba(0,0,0,.18);padding:28px 40px;z-index:50;grid-template-columns:repeat(3,1fr);gap:30px}
+.mega.open{display:grid}
+.mega h4{font-size:16px;margin-bottom:14px}
+.mega li{padding:6px 0 6px 18px;position:relative;font-size:15.5px;font-weight:400;text-transform:none}
+.mega li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--red);position:absolute;left:0;top:14px}
+.mega li.me{font-weight:700;color:var(--red)}
+
+/* banner */
+.banner{height:160px;display:grid;place-items:center;color:#fff;
+ background:linear-gradient(rgba(10,70,90,.8),rgba(10,60,80,.85)),
+ repeating-linear-gradient(45deg,#14515f 0 14px,#0f4350 14px 28px);background-size:cover;background-position:center}
+.banner h1{font-size:38px;font-weight:800}
+.crumbs{background:var(--navy);color:#fff;font-size:13px;font-weight:700}
+.crumbs div{max-width:960px;margin:auto;padding:11px 20px;display:flex;justify-content:space-between}
+
+/* content */
+main{max-width:960px;margin:0 auto;padding:30px 20px 50px}
+.hero{height:300px;border-radius:4px;margin-bottom:24px;background:linear-gradient(120deg,#1b2f86,#2a8a5b);display:grid;place-items:center;color:#fff;text-align:center;padding:20px;background-size:cover;background-position:center}
+.hero h2{font-size:34px;line-height:1.2}
+.hero h2 em{color:#4be58d;font-style:normal}
+.hero p{margin-top:10px;opacity:.9}
+.tabs{display:flex;gap:22px;border-bottom:1px solid #d6dbe2;margin-bottom:24px;flex-wrap:wrap}
+.tabs button{background:none;border:none;font:700 13px inherit;font-family:inherit;padding:10px 0;cursor:pointer;color:#000;border-bottom:2px solid transparent}
+.tabs button.on{color:var(--red);border-color:var(--red)}
+.panel{display:none}.panel.on{display:block}
+.panel h3{font-size:16px;font-weight:500;margin:6px 0 8px}
+.panel p{font-size:14px;color:var(--blue);margin-bottom:10px;text-align:justify}
+.facts{font-size:13px;margin-bottom:22px}
+.facts b{color:#000}
+.facts div{margin:2px 0}
+.facts .tag{font-weight:700;margin-bottom:6px}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:22px 0}
+.card{background:#fff;border:1px solid #dfe3e8;border-radius:6px;padding:16px}
+.card b{display:block;font-size:14px;margin-bottom:4px}
+.card span{font-size:13px;color:var(--muted)}
+.stat b{font-size:26px;color:var(--red)}
+.tl{margin-top:10px}
+.tl div{display:grid;grid-template-columns:70px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid #e3e6ea}
+.tl .y{font-weight:800;color:var(--green)}
+.tl b{display:block;font-size:14px}.tl span{font-size:13px;color:var(--muted)}
+.list .item{background:#fff;border:1px solid #dfe3e8;border-left:4px solid var(--red);border-radius:4px;padding:14px 16px;margin-bottom:12px}
+.item .d{font-size:12px;color:var(--green);font-weight:700}
+.item b{display:block;font-size:15px}
+.item span{font-size:13px;color:var(--muted)}
+.item a{font-size:13px;color:var(--red);font-weight:700}
+.join{background:linear-gradient(120deg,#2a9d62,#41b374);color:#fff;text-align:center;padding:36px 20px;border-radius:6px;margin-top:30px}
+.join h3{font-size:24px;margin-bottom:6px;color:#fff}
+.join p{color:#eaffef;text-align:center}
+.join a{display:inline-block;margin:10px 6px 0;padding:9px 18px;border-radius:4px;font-weight:700;font-size:13px;border:1px solid #fff}
+.join a.solid{background:#fff;color:var(--green)}
+
+/* placed + footer */
+.placed{background:var(--bg);text-align:center;padding:36px 20px}
+.placed h3{font-size:20px;margin-bottom:20px}
+.placed div{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;font-weight:800;color:#667}
+footer{background:var(--red);color:#fff;padding:30px 20px;font-size:12px}
+.fgrid{max-width:960px;margin:auto;display:grid;grid-template-columns:2fr 1.2fr 1.2fr 1.6fr;gap:24px}
+footer h5{font-size:13px;margin-bottom:12px}
+footer li{margin-bottom:6px;color:#fff}
+footer li:hover{text-decoration:underline;color:#ffe14d}
+footer p{margin-bottom:8px}
+
+@media(max-width:800px){
+ .menu-btn{display:block}
+ nav{width:100%;display:none}nav.open{display:block}
+ nav ul{flex-direction:column}
+ .mega{position:static;grid-template-columns:1fr;padding:10px}
+ .fgrid{grid-template-columns:1fr 1fr}
+ .topbar{flex-wrap:wrap;gap:10px;font-size:13px}.ticker{flex-basis:100%}
+ .banner h1{font-size:28px}
+ .hero h2{font-size:24px}
+}
